@@ -1,0 +1,60 @@
+用函数编程实现两个数组中对应元素值的交换。
+**输入格式要求："%d"  提示信息："Input array size(n<=10):"  "Input array a:"  "Input array b:"
+**输出格式要求："Output array a:"  "Output array b:"  "%5d"
+程序运行示例如下：
+Input array size(n<=10):5
+Input array a:1 2 3 4 5
+Input array b:6 7 8 9 10
+Output array a:    6    7    8    9   10
+Output array b:    1    2    3    4    5
+请按如下框架编程，在“......”的位置添加缺失的语句，使程序完整。
+#include  <stdio.h>
+#define N 10
+void ReadData(int a[], int n);
+void PrintData(int a[], int n);
+void Swap(int *x, int *y);
+int main()
+{
+    int  a[N], b[N], i, n;
+    printf("Input array size(n<=10):");
+    scanf("%d", &n);
+    printf("Input array a:");
+    ReadData(a, n);
+    printf("Input array b:");
+    ReadData(b, n);
+    for(i=0;i<n;i++)
+    {
+    Swap(&a[i],&b[i]);
+    }
+ 
+    printf("Output array a:");
+    PrintData(a, n);
+    printf("Output array b:");
+    PrintData(b, n);
+    return 0;
+}
+void ReadData(int a[], int n)
+{
+    int i;
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+}
+void PrintData(int a[], int n)
+{
+    int i;
+    for (i = 0; i < n; i++)
+    {
+        printf("%5d", a[i]);
+    }
+    printf("\n");
+}
+/* 函数功能：两整数值互换 */
+void  Swap(int *x, int *y)
+{
+    int  temp;
+    temp=*x;
+   *x=*y;
+   *y=temp;
+}
